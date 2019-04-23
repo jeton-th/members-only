@@ -1,13 +1,18 @@
 <h1>Sign in</h1>
 
-<%= form_for(:session) do |f| %>
-<%= render 'shared/error_messages' %>
+<%= form_for(:session, url: login_path) do |f| %>
+<% %>
 
 <%= f.label :email %><br>
-<%= f.email_field :email %><br>
+<%= f.email_field :email, value: (params[:email] if params[:email]) %><br>
 
 <%= f.label :password %><br>
 <%= f.password_field :password %><br>
+
+<%= f.label :remember_me, class: "checkbox inline" do %>
+<%= f.check_box :remember_me %>
+<span>Remember me</span>
+<% end %><br>
 
 <%= f.submit "Sign in" %>
 <% end %>

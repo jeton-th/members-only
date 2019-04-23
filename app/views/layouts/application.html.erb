@@ -10,10 +10,25 @@
   </head>
 
   <body>
+    <nav class="main-nav">
+      <%= link_to "Members Only", root_path, id: "logo" %>
+
+      <div class="nav-links">
+        <%= link_to "Home", root_path %>
+        <% if logged_in? %>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+          <%= link_to "Signup", signup_path %>
+        <% end %>
+      </div>
+    </nav>
+
     <% flash.each do |message_type, message| %>
       <!-- <div class="alert alert-<%= message_type %>"><%= message %></div> -->
       <%= content_tag(:div, message) %>
     <% end %>
+
     <%= yield %>
   </body>
 </html>

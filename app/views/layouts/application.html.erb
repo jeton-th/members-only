@@ -11,10 +11,9 @@
 
   <body>
     <nav class="main-nav">
-      <%= link_to "Members Only", root_path, id: "logo" %>
+      <h2><%= link_to "Members Only", root_path, id: "logo" %></h2>
 
       <div class="nav-links">
-        <!-- <%= link_to "Home", root_path %> -->
         <% if logged_in? %>
           <%= link_to "Logout", logout_path %>
         <% else %>

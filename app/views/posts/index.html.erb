@@ -1,9 +1,17 @@
 <h1>Posts</h1>
 
 <% if logged_in? %>
-  <%= link_to 'New post', new_post_path %>
+  <%= link_to 'New post', new_post_path %><br>
 <% end %>
 
+<div class="container">
 <% @posts.each do |post| %>
-  <% post.title %>
+  <div class="post">
+    <h2><%= post.title %></h2>
+    <% if logged_in? %>
+    <h4>by <%= post.user.name %></h4>
+    <% end %>
+    <p><%= post.body %></p>
+  </div>
 <% end %>
+<div>

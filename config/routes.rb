@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resource :users 
-  root 'users#new' 
+  root 'users#new'
+  resource :users
+  resource :sessions, only: [:new, :create, :destroy]
 end

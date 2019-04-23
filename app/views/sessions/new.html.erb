@@ -1,0 +1,13 @@
+<h1>Sign in</h1>
+
+<%= form_for(:session) do |f| %>
+<%= render 'shared/error_messages' %>
+
+<%= f.label :email %><br>
+<%= f.email_field :email %><br>
+
+<%= f.label :password %><br>
+<%= f.password_field :password %><br>
+
+<%= f.submit "Sign in" %>
+<% end %>

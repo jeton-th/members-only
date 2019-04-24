@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_04_24_111347) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "member"
-    t.datetime "approved_at"
     t.boolean "admin"
   end
 

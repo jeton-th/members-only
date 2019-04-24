@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:info] = "Welcome!"
+      # log_in @user
+      flash[:info] = "Thanks for signing in! Please wait 1-7 days for an admin to approve your account."
       redirect_to root_url
     else
       render 'new'

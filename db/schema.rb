@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_145225) do
+ActiveRecord::Schema.define(version: 2019_04_24_111347) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2019_04_23_145225) do
     t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "member"
+    t.datetime "approved_at"
+    t.boolean "admin"
   end
 
 end

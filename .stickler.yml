@@ -1,0 +1,15 @@
+linters:
+    rubocop:
+        display_cop_names: true
+        fixer: true
+        require: rubocop-performance
+files:
+  ignore:
+    - 'db/schema.rb'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'test/test.helper.rb'
+    - 'db/seeds.rb'
+    - 'app/helpers/sessions_helper.rb'
+    - 'config/*'
+    - 'bin/*'

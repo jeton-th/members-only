@@ -1,24 +1,13 @@
 <h1>New post</h1>
 
 <%= form_for(@post, url: new_post_path) do |f| %>
-<% if @post.errors.any? %>
-  <div id="error_explanation">
-    <div>
-      The form contains <%= pluralize(@post.errors.count, "error") %>.
-    </div>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'shared/error_messages', object: f.object %>
 
 <%= f.label :title %><br>
 <%= f.text_field :title %><br>
 
 <%= f.label :body %><br>
-<%= f.text_field :body %><br>
+<%= f.text_area :body, placeholder: "Compose new post..."  %><br>
 
 <%= f.submit "Create new post" %>
 <% end %>

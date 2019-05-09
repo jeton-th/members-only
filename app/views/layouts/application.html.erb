@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MembersOnly</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="main-nav">
+      <h2><%= link_to "Members Only", root_path, id: "logo" %></h2>
+
+      <div class="nav-links">
+        <% if logged_in? %>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+          <%= link_to "Signup", signup_path %>
+        <% end %>
+      </div>
+    </nav>
+
+    <% flash.each do |message_type, message| %>
+      <!-- <div class="alert alert-<%= message_type %>"><%= message %></div> -->
+      <%= content_tag(:div, message) %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
